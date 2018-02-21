@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+
+        <File name="FileClone" fileName="dupLog1.log">
+        </File>
+
+        <File name="FILE" fileName="dupLog2.log">
+            <Filters>
+                <ThresholdFilter level="fatal"  onMatch="DENY"   onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
+
+
+
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="FILE" level="TRACE"/>
+            <AppenderRef ref="FileClone" level="fatal"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
